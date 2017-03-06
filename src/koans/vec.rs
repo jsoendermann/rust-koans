@@ -1,14 +1,14 @@
 // Vecs act sort of like arrays, but allow more flexibility
 #[test]
 fn making_an_empty_vec() {
-    let vector: Vec<()> = __;
+    let vector: Vec<()> = vec![];
     assert!(vector.len() == 0);
 }
 
 // The vec! macro makes it easier to instantiate a vec
 #[test]
 fn vec_macro() {
-    let vector = __;
+    let vector = vec![0; 4];
     assert!(vector.len() == 4);
 }
 
@@ -16,7 +16,7 @@ fn vec_macro() {
 #[test]
 fn adding_to_vecs() {
     let mut vector = vec![0, 1, 2];
-    vector.__(3);
+    vector.push(3);
     assert!(vector.len() == 4);
 }
 
@@ -24,7 +24,7 @@ fn adding_to_vecs() {
 #[test]
 fn removing_from_end_of_vecs() {
     let mut vector = vec![0, 1, 2, 3];
-    vector.__();
+    vector.pop();
     assert!(vector.len() == 3);
 }
 
@@ -32,7 +32,7 @@ fn removing_from_end_of_vecs() {
 #[test]
 fn storing_vec_elements() {
     let mut vector = vec![0, 1, 2, 3];
-    let num = vector.__();
+    let num = vector.pop();
     assert!(num == 3);
 }
 
@@ -41,9 +41,9 @@ fn storing_vec_elements() {
 #[test]
 fn changing_size_of_vecs() {
     let mut vector = vec![1, 2, 3];
-    __;
+    vector.push(4);
     assert!(vector.len() == 4);
-    __;
+    vector.pop();
     assert!(vector.len() == 3);
 }
 
